@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja Online</title>
+    <style>
+        /* Estilos CSS aqui */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minha Loja Online</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Carrinho</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="product">
+            <img src="produto1.jpg" alt="Produto 1">
+            <h2>Produto 1</h2>
+            <p>Descrição do Produto 1.</p>
+            <p>Preço: R$ 19.99</p>
+            <button onclick="adicionarAoCarrinho('Produto 1', 19.99)">Adicionar ao Carrinho</button>
+        </section>
+        <!-- Adicione mais produtos aqui -->
+    </main>
+    <aside>
+        <h2>Carrinho</h2>
+        <ul id="carrinho">
+            <!-- Itens do carrinho serão adicionados aqui via JavaScript -->
+        </ul>
+        <p>Total: <span id="total">R$ 0.00</span></p>
+    </aside>
+    <footer>
+        <p>&copy; 2023 Minha Loja Online</p>
+    </footer>
+
+    <script>
+        let carrinho = [];
+        let total = 0;
+
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            total += preco;
+
+            const carrinhoList = document.getElementById("carrinho");
+            const totalElement = document.getElementById("total");
+
+            const newItem = document.createElement("li");
+            newItem.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
+            carrinhoList.appendChild(newItem);
+
+            totalElement.textContent = `R$ ${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
