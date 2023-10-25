@@ -1,0 +1,4 @@
+::selection {
+    color: var(--cor-vermelha);
+    background-color: var(--cor-branco);
+}

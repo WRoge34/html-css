@@ -1,0 +1,7 @@
+@import '../../global/global.css';
+
+@import './partials/nav.css';
+@import './partials/section-compra.css';
+@import './partials/section-topo.css';
+@import './partials/sections-itens.css';
+@import './partials/footer.css';
